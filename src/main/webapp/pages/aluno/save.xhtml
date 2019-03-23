@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Aluno</title>
+</h:head>
+<h:body>
+
+	<style>
+		.coluna1 {
+			text-align: right !important;
+		}
+		
+		.coluna2 {
+			text-align: left !important;
+		}
+		.coluna20 {
+			text-align: right !important;
+			width: 20%;
+		}
+
+		.coluna80 {
+			text-align: left !important;
+			width: 80%;
+		}
+		
+		.negrito {
+			font-weight: bold;
+		}	
+	</style>
+
+	<p:growl id="msgs" showDetail="false" life="7000" sticky="false"/>
+	
+	<h:form id="form">
+		
+		<h:panelGrid columns="2" columnClasses="coluna1, coluna2"
+			cellpadding="2" cellspacing="2" width="100%">
+		
+			<h:outputText value="CPF:" />
+			<p:inputMask 
+				value="#"
+				mask="999.999.999-99"
+				style="width:140px;" 
+				label="CPF"
+				required="true"/>
+		
+			<h:outputText value="Nome:" />
+			<p:inputText 
+				value="#"
+				style="width:400px;"
+				maxlength="50" 
+				label="Nome"
+				required="true"/>
+			
+			<h:outputText value="Telefone:" />
+			<p:inputMask 
+				value="#"
+				mask="(99) 9999-9999"/>
+						
+			<h:outputText value="E-Mail:" />
+			<p:inputText 
+				value="#"
+				style="width:250px;" 
+				maxlength="50" 
+				label="E-Mail">
+				
+			</p:inputText>
+			
+			<h:outputText value="Logradouro:" />
+			<p:inputText 
+				value="#"
+				style="width:350px;" 
+				label="Logradouro"
+				maxlength="80" 
+				required="true"/>
+			
+			<h:outputText value="Nº:" />
+			<p:inputText 
+				value="#"
+				style="width:40px;" 
+				label="Número"
+				maxlength="5"/>
+
+
+			<h:outputText value="Complemento:" />
+			<p:inputText 
+				value="#"
+				style="width:320px;" 
+				maxlength="30" 
+				label="Complemento"/>
+
+			<h:outputText value="Bairro:" />
+			<p:inputText 
+				value="#"
+				style="width:120px;" 
+				label="Bairro" 
+				maxlength="50" 
+				required="true"/>
+				
+			<h:outputText value="Município:" />
+			<p:inputText 
+				value="#"
+				style="width:120px;" 
+				label="Município" 
+				maxlength="100" 
+				required="true"/>
+			
+			<h:outputText value="CEP:" />
+			<p:inputMask 
+				value="#"
+				mask="99999-999"
+				style="width:140px;" 
+				label="CEP"
+				required="true"/>
+			
+			<h:outputText value="UF:" />
+			<h:outputText 
+				value="SP" 
+				styleClass="negrito"/>
+				
+			<p:commandButton 
+				actionListener="#"
+				value="Salvar"
+				update=":msgs form" />
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
