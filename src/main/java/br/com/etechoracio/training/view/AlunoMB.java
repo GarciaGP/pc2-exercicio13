@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Controller
-@Scope("View")
+@Scope("view")
 public class AlunoMB extends BaseMB {
 
 	@Autowired

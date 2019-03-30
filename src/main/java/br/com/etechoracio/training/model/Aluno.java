@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import br.com.etechoracio.common.model.BaseORM;
 import lombok.Getter;
@@ -28,6 +29,7 @@ public class Aluno extends BaseORM {
 	@Column(name="NM_ALUNO")
 	private String nome;
 	
+	@Transient
 	@Column(name="NR_CPF")
 	private Long cpf;
 	

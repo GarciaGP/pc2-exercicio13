@@ -46,11 +46,12 @@
 				mask="999.999.999-99"
 				style="width:140px;" 
 				label="CPF"
-				required="true"/>
+				required="true"
+				converter="#{cpfConverter}"/>
 		
 			<h:outputText value="Nome:" />
 			<p:inputText 
-				value="#"
+				value="#{alunoMB.edit.nome}"
 				style="width:400px;"
 				maxlength="50" 
 				label="Nome"
@@ -58,12 +59,13 @@
 			
 			<h:outputText value="Telefone:" />
 			<p:inputMask 
-				value="#"
-				mask="(99) 9999-9999"/>
+				value="#{alunoMB.edit.telefone}"
+				mask="(99) 9999-9999"
+				converter="#{telefoneConverter}"/>
 						
 			<h:outputText value="E-Mail:" />
 			<p:inputText 
-				value="#"
+				value="#{alunoMB.edit.email}"
 				style="width:250px;" 
 				maxlength="50" 
 				label="E-Mail">
@@ -72,7 +74,7 @@
 			
 			<h:outputText value="Logradouro:" />
 			<p:inputText 
-				value="#"
+				value="#{alunoMB.edit.endereco.logradouro}"
 				style="width:350px;" 
 				label="Logradouro"
 				maxlength="80" 
@@ -80,7 +82,7 @@
 			
 			<h:outputText value="Nº:" />
 			<p:inputText 
-				value="#"
+				value="#{alunoMB.edit.endereco.numero}"
 				style="width:40px;" 
 				label="Número"
 				maxlength="5"/>
@@ -88,14 +90,14 @@
 
 			<h:outputText value="Complemento:" />
 			<p:inputText 
-				value="#"
+				value="#{alunoMB.edit.endereco.complemento}"
 				style="width:320px;" 
 				maxlength="30" 
 				label="Complemento"/>
 
 			<h:outputText value="Bairro:" />
 			<p:inputText 
-				value="#"
+				value="#{alunoMB.edit.endereco.bairro}"
 				style="width:120px;" 
 				label="Bairro" 
 				maxlength="50" 
@@ -103,7 +105,7 @@
 				
 			<h:outputText value="Município:" />
 			<p:inputText 
-				value="#"
+				value="#{alunoMB.edit.endereco.cidade}"
 				style="width:120px;" 
 				label="Município" 
 				maxlength="100" 
@@ -111,11 +113,12 @@
 			
 			<h:outputText value="CEP:" />
 			<p:inputMask 
-				value="#"
+				value="#{alunoMB.edit.endereco.cep}"
 				mask="99999-999"
 				style="width:140px;" 
 				label="CEP"
-				required="true"/>
+				required="true"
+				converter="#{cepConverter}"/>
 			
 			<h:outputText value="UF:" />
 			<h:outputText 
@@ -123,7 +126,7 @@
 				styleClass="negrito"/>
 				
 			<p:commandButton 
-				actionListener="#"
+				actionListener="#{alunoMB.onSave}"                                    onSave}"
 				value="Salvar"
 				update=":msgs form" />
 		</h:panelGrid>
