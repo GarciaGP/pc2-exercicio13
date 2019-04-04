@@ -4,6 +4,9 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 
+import org.springframework.stereotype.Component;
+
+@Component(value = "foneConverter")
 public class TelefoneConverter implements Converter {
 
 	@Override

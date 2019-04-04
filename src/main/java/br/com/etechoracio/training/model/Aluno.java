@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -45,4 +46,14 @@ public class Aluno extends BaseORM {
 	@OneToOne(mappedBy="aluno", cascade = CascadeType.ALL)
 	private Endereco endereco = new Endereco();
 	
-}
+
+	@PrePersist
+	  private void dataCriacao() {
+	   if (dataCriacao == null)
+		   dataCriacao = new Date();
+	  }
+
+	 
+	}
+	
+
